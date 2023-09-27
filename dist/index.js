@@ -10,6 +10,9 @@ const users_1 = require("./controller/users/users");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = Number(process.env.PORT);
+app.get("/", (req, res) => {
+    res.send("Express server is Runing");
+});
 app.use("/post", post_1.postRoute);
 app.use("/users", users_1.usersRoute);
 app.listen(port, () => {
